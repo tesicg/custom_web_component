@@ -12,14 +12,28 @@ This project is a simple demonstration of how to create a web component with sep
 
 This separation of concerns makes the code more organized and easier to maintain.
 
-## Event Communication
+## Components
+
+### `my-component`
+This component displays a button with a counter. When the button is clicked, the counter increments.
+
+-   **`counter-color`**: This attribute allows you to change the color of the counter text.
+
+    ```html
+    <my-component counter-color="red"></my-component>
+    ```
+
+### Event Communication
 
 This project also demonstrates how web components can communicate using custom events.
 
 -   **`sender-component`**: This component displays a button. When clicked, it dispatches a `my-custom-event`. It has a `message` attribute that allows you to customize the data sent in the event.
 
+    -   **`message`**: This attribute allows you to customize the data sent in the event.
+    -   **`background-color`**: This attribute allows you to change the background color of the button.
+
     ```html
-    <sender-component message="Your custom message here!"></sender-component>
+    <sender-component message="Your custom message here!" background-color="blue"></sender-component>
     ```
 
 -   **`receiver-component`**: This component listens for the `my-custom-event` on the `document` and displays the message it receives from the event's detail.
