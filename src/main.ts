@@ -1,0 +1,1 @@
+import './components/custom/my-component/my-component.ts'
