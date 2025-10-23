@@ -4,13 +4,27 @@ This project is a simple demonstration of how to create a web component with sep
 
 ## File Structure
 
--   `src/components/custom/my-component/my-component.html`: Contains the HTML for the component.
--   `src/components/custom/my-component/my-component.css`: Contains the CSS for the component.
--   `src/components/custom/my-component/my-component.ts`: The TypeScript file now imports the HTML and CSS files and uses them to build the component.
--   `index.html`: The main HTML file that uses the `<my-component>`.
--   `src/main.ts`: This file now only imports the component.
+-   `src/components/custom/my-component/`: Contains the files for the original example component.
+-   `src/components/custom/sender-component/`: Contains the files for the component that dispatches events.
+-   `src/components/custom/receiver-component/`: Contains the files for the component that listens for events.
+-   `index.html`: The main HTML file that uses the components.
+-   `src/main.ts`: This file imports all the component definitions.
 
 This separation of concerns makes the code more organized and easier to maintain.
+
+## Event Communication
+
+This project also demonstrates how web components can communicate using custom events.
+
+-   **`sender-component`**: This component displays a button. When clicked, it dispatches a `my-custom-event`. It has a `message` attribute that allows you to customize the data sent in the event.
+
+    ```html
+    <sender-component message="Your custom message here!"></sender-component>
+    ```
+
+-   **`receiver-component`**: This component listens for the `my-custom-event` on the `document` and displays the message it receives from the event's detail.
+
+This example shows a simple way for components to communicate without having a direct parent-child relationship.
 
 ## Project Setup
 
